@@ -1,3 +1,15 @@
+// Prevent reader mode by adding interaction
+(function() {
+    // Force interactive mode
+    document.documentElement.classList.add('js-enabled');
+    
+    // Add click handlers to body to prevent reader mode detection
+    document.body.addEventListener('click', function() {}, false);
+    
+    // Add mousemove tracking
+    document.addEventListener('mousemove', function() {}, false);
+})();
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
